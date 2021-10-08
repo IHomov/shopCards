@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --height-my: calc(100%/11);
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family:"Roboto Slab",serif;
+}
+
+.container {
+    width: clamp(460px, 90vw, 900px);
+    margin: 0 auto;
+}
+
+header,
+main,
+footer {
+    padding: 1rem;
+}
+
+/****************/
+p{
+font-size: 14px;
+}
+
+.text a{
+    margin: 10px 0px 0 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+.text a:not(:last-child){
+    margin-right: 10px;
+}
+/* head of container */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.container header {
+    width: 100%;
+}
+.container header>h1 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+}
+/* main block */
+main {
+    flex-grow: 1;
+}
+/* cell of page */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.cell {
+    display: flex;
+    min-height: 100px;
+    height: var(--height-my);
+    width: 100%;
+    padding: 5px;
+    border: 2px solid rgb(236, 233, 233);
+    align-items: center;
+}
+.cell div:not(.bin), div:not(.buy){
+    padding: 7px;
+}
+.cell:not(:first-child) {
+    border-top: none;
+}
+
+/* block picture */
+img{
+    width: 100%;
+}
+
+/* block of text */
+.text h2{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.text{
+    flex-grow: 2;
+}
+.text p {
+    padding: 5px 0 5px 10px;
+}
+
+/* icons */
+.fa-question-circle{
+    color: #000;
+    font-size: 16px;
+}
+.fa-heart{
+    color: red;
+    font-size: 16px;
+}
+
+/* block of buttons */
+
+.price_buttons{
+    width: 100%;
+    line-height: 2;
+}
+.price_buttons p, h2{
+    text-align: left;
+}
+.price_buttons h2{
+    font-size: 22px;
+    color: #FFA500;
+}
+button{
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #FFA500;
+    border: none;
+    width: 100%;
+}
+
+.bin{
+    margin-bottom: 5px;
+}
+
+.buy button{
+    background: #0A7B29;
+}
+/*** hover***************/
+.picture img{
+    transition: 0.5s;
+    position: relative;
+    z-index: 1;
+}
+.cell:hover .picture img {
+    transform: scale(1.1);
+    z-index: 5;
+
+}
+
+.text a:last-child{
+    transition: 0.5s;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+.cell:hover .text a:last-child{
+    opacity: 1;
+}
+
+.buy button{
+    transition: 0.5s;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cell:hover .buy button{
+    opacity: 1;
+}
